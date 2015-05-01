@@ -13,6 +13,6 @@ RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selectio
 EXPOSE 8080
 EXPOSE 50000
 
-USER jenkings
+USER jenkins
 
 ENTRYPOINT ["/usr/local/bin/jenkins.sh"]
