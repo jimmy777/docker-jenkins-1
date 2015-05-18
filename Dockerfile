@@ -3,12 +3,9 @@ MAINTAINER javier.ramon@gmail.com
 
 USER root
 
-RUN 'deb http://http.debian.net/debian jessie-backports main' | tee /etc/apt/sources.list.d/backports.list
-
 RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections \
     && apt-get update \
-    && apt-get install -qq -y make mercurial libnotify-bin locales rpm ruby-sass \
-    && apt-get -t jessie-backports install -qq -y docker.io \
+    && apt-get install -qq -y docker.io make mercurial libnotify-bin locales rpm ruby-sass \
     && apt-get autoremove \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
